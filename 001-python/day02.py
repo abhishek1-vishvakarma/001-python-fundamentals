@@ -20,59 +20,75 @@
 
 
 # ValueError
+# # try:
+# #     num = int("hello")
+
+# # except ValueError:
+# #     print("ValueError: Invalid value")
+
+
+# # # TypeError
+# # try:
+# #     result = 10 + "20"
+
+# # except TypeError:
+# #     print("TypeError: Wrong data type")
+
+
+# # # ZeroDivisionError
+# # try:
+# #     result = 10 / 0
+
+# # except ZeroDivisionError:
+# #     print("ZeroDivisionError: Cannot divide by zero")
+
+
+# # # IndexError
+# # try:
+# #     numbers = [10, 20, 30]
+# #     print(numbers[5])
+
+# # except IndexError:
+# #     print("IndexError: Invalid list index")
+
+
+# # # KeyError
+# # try:
+# #     user = {"name": "Abhishek"}
+# #     print(user["email"])
+
+# # except KeyError:
+# #     print("KeyError: Dictionary key does not exist")
+
+
+# # # FileNotFoundError
+# # try:
+# #     with open("unknown.txt", "r") as file:
+# #         data = file.read()
+
+# # except FileNotFoundError:
+# #     print("FileNotFoundError: File does not exist")
+
+
+# # # NameError
+# # try:
+# #     print(username) 
+
+# # except NameError:
+#     print("NameError: Variable does not exist")
+
+
 try:
-    num = int("hello")
-
-except ValueError:
-    print("ValueError: Invalid value")
-
-
-# TypeError
-try:
-    result = 10 + "20"
-
-except TypeError:
-    print("TypeError: Wrong data type")
-
-
-# ZeroDivisionError
-try:
-    result = 10 / 0
-
-except ZeroDivisionError:
-    print("ZeroDivisionError: Cannot divide by zero")
-
-
-# IndexError
-try:
-    numbers = [10, 20, 30]
-    print(numbers[5])
-
-except IndexError:
-    print("IndexError: Invalid list index")
-
-
-# KeyError
-try:
-    user = {"name": "Abhishek"}
-    print(user["email"])
-
+  user ={
+    'name': "Abhishek",
+    "age": 25
+  }
+#   print(user["email"])
+  print(user.get("email", "Email not found"))
 except KeyError:
-    print("KeyError: Dictionary key does not exist")
+  print("Key does not exist")
 
 
-# FileNotFoundError
-try:
-    with open("unknown.txt", "r") as file:
-        data = file.read()
-
-except FileNotFoundError:
-    print("FileNotFoundError: File does not exist")
 
 
-# NameError
-try:
-    print(username)
-
-except NameError:
-    print("NameError: Variable does not exist")
+  
