@@ -175,3 +175,51 @@ except FileNotFoundError:
 
 except json.JSONDecodeError:
   print("Invalid JSON format")
+
+#11. JSON in APIs ⭐⭐⭐
+# This is very important for your AI Engineer path.
+
+# Suppose a frontend sends:
+# {
+#     "question": "What is the leave policy?"
+# }
+
+from pydentic import BaseModel
+from fastapi import FastAPI
+
+app = FastAPI()
+
+class Question(BaseModel):
+     question: str
+
+@app.post("/ask")
+def ask_question(data: Question):
+   return {
+      "answer": f"You asked: {data.question}"
+   }
+
+#Request:
+{
+   "question": "What is the leave policy?"
+}
+
+#Response:
+
+{
+    "answer": "You asked: What is the leave policy?"
+}
+
+# ⭐ What You Should Remember
+#                 JSON
+#                   │
+#           ┌───────┴────────┐
+#           │                │
+#        String             File
+#           │                │
+#      ┌────┴────┐      ┌────┴────┐
+#      │         │      │         │
+#  dumps()    loads()  dump()    load()
+#      │         │      │         │
+#  Python →   JSON →   Python →  JSON →
+#  JSON       Python   File      Python
+
